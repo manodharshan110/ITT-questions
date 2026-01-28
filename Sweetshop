@@ -1,0 +1,68 @@
+//implementing a sweet shop scenario where user can buy different types of sweet n different quantity
+import java.util.*;
+abstract class Sweet {
+    double sweetpkg = 400; // Base price
+    abstract double calc(int count);
+}
+
+class Milksweet extends Sweet {
+    @Override
+    double calc(int count) {
+        return (sweetpkg * count) + 50;
+    }
+}
+
+class NutSweet extends Sweet {
+    @Override
+    double calc(int count) {
+        return (sweetpkg * count) + 100;
+    }
+}
+
+class SweetCalculator {
+    private Milksweet ms = new Milksweet();
+    private NutSweet ns = new NutSweet();
+
+    public void processSweets() {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+
+        while (true) {
+            //  Display Available Sweets
+            System.out.println("\n--- Available Sweets ---");
+            System.out.println("1. Milk Sweet (Price: " + ms.sweetpkg + " + 50 extra)");
+            System.out.println("2. Nut Sweet  (Price: " + ns.sweetpkg + " + 100 extra)");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice (1-3): ");
+
+            choice = sc.nextInt();
+
+            if (choice == 3) {
+                System.out.println("Exiting the program...");
+                break;
+            }
+
+            System.out.print("Enter quantity: ");
+            int quantity = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Total for Milk Sweet: " + ms.calc(quantity));
+                    break;
+                case 2:
+                    System.out.println("Total for Nut Sweet: " + ns.calc(quantity));
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please select 1, 2, or 3.");
+            }
+        }
+        sc.close();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SweetCalculator app = new SweetCalculator();
+        app.processSweets();
+    }
+}
