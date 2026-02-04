@@ -1,4 +1,4 @@
-//implementing a sweet shop scenario where user can buy different types of sweet n different quantity
+//implementing a sweet shop scenario where user can buy different types of sweet in different quantity
 import java.util.*;
 abstract class Sweet {
     double sweetpkg = 400; // Base price
