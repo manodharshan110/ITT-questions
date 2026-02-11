@@ -1,0 +1,26 @@
+Leetcode Problem no:1207. Unique Number of Occurrences
+class Solution {
+    public boolean uniqueOccurrences(int[] arr) {
+        HashMap<Integer,Integer> m = new HashMap<>();
+        for(int i=0;i<arr.length;i++)
+        {
+            if(m.containsKey(arr[i]))
+            {
+                m.put(arr[i],m.get(arr[i])+1);
+            }
+            else
+            {
+            m.put(arr[i],1);
+            }
+        }
+        HashSet<Integer> set = new HashSet<>();
+       for(int freq:m.values())
+       {
+        if(!set.add(freq))
+        {
+            return false;
+        }
+       }
+        return true;
+    }
+}
