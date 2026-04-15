@@ -16,3 +16,7 @@ runs at 10 ms Beats 84.22%
 4. Longest Palindromic Substring
 Runs at 1554 ms Beats 10.32%
 
+5.Linked List Cycle
+Runtime 0 ms Beats 100.00%
+
+
