@@ -13,7 +13,10 @@ runs at 7ms beats 75.74% problems solvers at Time complexity
 3.Find all Anagrams in a String
 runs at 10 ms Beats 84.22%
 
-5.Linked List Cycle
+4.Linked List Cycle
 Runtime 0 ms Beats 100.00%
+
+5.Longest Palindromic Substring
+Runs at 1554 ms Beats 10.32%
 
 
